@@ -1,0 +1,37 @@
+services:
+  spark-master:
+    image: apache/spark-py:v3.4.0
+    user: root
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master
+    ports:
+      - "8080:8080"
+      - "7077:7077"
+    environment:
+      - SPARK_NO_DAEMONIZE=true
+      - PYSPARK_PYTHON=/usr/bin/python3.10
+      - PYSPARK_DRIVER_PYTHON=/usr/bin/python3.10
+
+  spark-worker:
+    image: apache/spark-py:v3.4.0
+    user: root
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+    depends_on:
+      - spark-master
+    environment:
+      - SPARK_NO_DAEMONIZE=true
+      - PYSPARK_PYTHON=/usr/bin/python3.10
+      - PYSPARK_DRIVER_PYTHON=/usr/bin/python3.10
+    deploy:
+      replicas: 2
+  
+  spark-job-sparkie:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - spark-master
+    profiles:
+      - spark-job-sparkie
+    environment:
+      - PYSPARK_PYTHON=/usr/bin/python3.10
+      - PYSPARK_DRIVER_PYTHON=/usr/bin/python3.10
