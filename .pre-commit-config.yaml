@@ -32,11 +32,3 @@ repos:
     hooks:
       - id: zizmor
         args: [--config, ./.config/zizmor.yml]
-  - repo: local
-    hooks:
-      - id: pinact
-        name: pinact
-        entry: pinact run
-        language: system
-        files: ^\.github/workflows/.*\.ya?ml$
-        pass_filenames: false
