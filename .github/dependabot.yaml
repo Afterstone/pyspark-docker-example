@@ -43,13 +43,13 @@ updates:
       uv:
         patterns:
           - '*'
-  # - package-ecosystem: pre-commit
-  #   directory: /
-  #   schedule:
-  #     interval: daily
-  #   cooldown:
-  #     default-days: 7
-  #   groups:
-  #     pre-commit:
-  #       patterns:
-  #         - '*'
+  - package-ecosystem: pre-commit
+    directory: /
+    schedule:
+      interval: daily
+    cooldown:
+      default-days: 7
+    groups:
+      pre-commit:
+        patterns:
+          - '*'
