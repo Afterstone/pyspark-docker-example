@@ -17,7 +17,7 @@ services:
       - spark-master
     deploy:
       replicas: 2
-  
+
   spark-job-sparkie:
     build:
       context: .
