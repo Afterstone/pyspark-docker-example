@@ -16,4 +16,3 @@ RUN uv sync --no-install-project --no-dev
 
 COPY src /app/src
 RUN uv sync --no-dev
-

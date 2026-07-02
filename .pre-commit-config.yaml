@@ -1,0 +1,34 @@
+repos:
+  - repo: https://github.com/lyz-code/yamlfix
+    rev: f857ca370af3db7e5e181373d45c06a148fac3f8  # frozen: 1.19.1
+    hooks:
+      - id: yamlfix
+        args: [--config-file, ./.config/yamlfix.toml]
+  - repo: https://github.com/adrienverge/yamllint
+    rev: cba56bcde1fdd01c1deb3f945e69764c291a6530  # frozen: v1.38.0
+    hooks:
+      - id: yamllint
+        args: [--config-file, ./.config/yamllint.yaml, --strict]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c  # frozen: v6.0.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-toml
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+  - repo: https://github.com/hadolint/hadolint
+    rev: 57e1618d78fd469a92c1e584e8c9313024656623  # frozen: v2.14.0
+    hooks:
+      - id: hadolint-docker
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: 745be0411e3c150e246d527e531e5a221b8c3462  # frozen: v0.15.19
+    hooks:
+      - id: ruff-format
+      - id: ruff-check
+        args: [--fix]
+  - repo: https://github.com/zizmorcore/zizmor-pre-commit
+    rev: e3eebf65325ccc992422292cb7a4baee967cf815  # frozen: v1.26.1
+    hooks:
+      - id: zizmor
+        args: [--config, ./.config/zizmor.yml]

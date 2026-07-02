@@ -1,0 +1,4 @@
+sequence_style = "keep_style"
+explicit_start = false
+line_length = 160
+comments_require_starting_space = false
