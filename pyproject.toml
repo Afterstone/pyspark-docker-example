@@ -6,11 +6,15 @@ readme = "README.md"
 authors = []
 requires-python = ">=3.10,<3.11"
 dependencies = [
-    "numpy>=2.2.6",
-    "pyspark==4.0.3",
-    "python-dotenv>=1.2.2",
-    "setuptools>=82.0.1",
+    "numpy>=2.0",
+    "pyspark>=4.0",
+    "python-dotenv>=1.0",
+    "setuptools>=80.0",
 ]
+
+[tool.uv]
+exclude-newer = "1 week"
+constraint-dependencies = []
 
 [project.scripts]
 sparkie = "sparkie:main"
