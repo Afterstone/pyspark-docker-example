@@ -29,6 +29,7 @@ repos:
     rev: e3eebf65325ccc992422292cb7a4baee967cf815  # frozen: v1.26.1
     hooks:
       - id: zizmor
+        args: [--config, .config/zizmor.yml]
   - repo: local
     hooks:
       - id: pinact
