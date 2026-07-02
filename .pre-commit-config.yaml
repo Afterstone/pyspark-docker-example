@@ -3,6 +3,7 @@ repos:
     rev: f857ca370af3db7e5e181373d45c06a148fac3f8  # frozen: 1.19.1
     hooks:
       - id: yamlfix
+        args: [--config-file, ./.config/yamlfix.toml]
   - repo: https://github.com/adrienverge/yamllint
     rev: cba56bcde1fdd01c1deb3f945e69764c291a6530  # frozen: v1.38.0
     hooks:
