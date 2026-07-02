@@ -1,11 +1,13 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, upper
 
+from . import config
+
 
 def main():
     spark = (
         SparkSession.builder.appName("dummy-job")
-        .master("spark://spark-master:7077")
+        .master(config.SPARK_MASTER_URL)
         .getOrCreate()
     )
 
