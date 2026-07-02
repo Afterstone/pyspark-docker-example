@@ -15,25 +15,25 @@ repos:
       - id: check-yaml
       - id: end-of-file-fixer
       - id: trailing-whitespace
-  # - repo: https://github.com/hadolint/hadolint
-  #   rev: 57e1618d78fd469a92c1e584e8c9313024656623  # frozen: v2.14.0
-  #   hooks:
-  #     - id: hadolint-docker
-  # - repo: https://github.com/astral-sh/ruff-pre-commit
-  #   rev: 745be0411e3c150e246d527e531e5a221b8c3462  # frozen: v0.15.19
-  #   hooks:
-  #     - id: ruff-format
-  #     - id: ruff-check
-  #       args: [--fix]
-  # - repo: https://github.com/zizmorcore/zizmor-pre-commit
-  #   rev: e3eebf65325ccc992422292cb7a4baee967cf815  # frozen: v1.26.1
-  #   hooks:
-  #     - id: zizmor
-  # - repo: local
-  #   hooks:
-  #     - id: pinact
-  #       name: pinact
-  #       entry: pinact run
-  #       language: system
-  #       files: ^\.github/workflows/.*\.ya?ml$
-  #       pass_filenames: false
+  - repo: https://github.com/hadolint/hadolint
+    rev: 57e1618d78fd469a92c1e584e8c9313024656623  # frozen: v2.14.0
+    hooks:
+      - id: hadolint-docker
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: 745be0411e3c150e246d527e531e5a221b8c3462  # frozen: v0.15.19
+    hooks:
+      - id: ruff-format
+      - id: ruff-check
+        args: [--fix]
+  - repo: https://github.com/zizmorcore/zizmor-pre-commit
+    rev: e3eebf65325ccc992422292cb7a4baee967cf815  # frozen: v1.26.1
+    hooks:
+      - id: zizmor
+  - repo: local
+    hooks:
+      - id: pinact
+        name: pinact
+        entry: pinact run
+        language: system
+        files: ^\.github/workflows/.*\.ya?ml$
+        pass_filenames: false
