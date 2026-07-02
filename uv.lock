@@ -3,8 +3,8 @@ revision = 3
 requires-python = "==3.10.*"
 
 [options]
-exclude-newer = "2026-06-25T14:30:31.926894937Z"
-exclude-newer-span = "P7D"
+exclude-newer = "2026-06-25T15:01:51.791266365Z"
+exclude-newer-span = "P1W"
 
 [[package]]
 name = "numpy"
@@ -107,10 +107,10 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "numpy", specifier = ">=2.2.6" },
-    { name = "pyspark", specifier = "==4.1.2" },
-    { name = "python-dotenv", specifier = ">=1.2.2" },
-    { name = "setuptools", specifier = ">=82.0.1" },
+    { name = "numpy", specifier = ">=2.0" },
+    { name = "pyspark", specifier = ">=4.0" },
+    { name = "python-dotenv", specifier = ">=1.0" },
+    { name = "setuptools", specifier = ">=80.0" },
 ]
 
 [package.metadata.requires-dev]
