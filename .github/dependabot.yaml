@@ -1,0 +1,55 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: daily
+    cooldown:
+      default-days: 7
+    groups:
+      github-actions:
+        patterns:
+          - '*'
+  - package-ecosystem: docker
+    directories:
+      - /dagster_proj
+      - /finn_dashboard
+    schedule:
+      interval: daily
+    cooldown:
+      default-days: 7
+    groups:
+      docker:
+        patterns:
+          - '*'
+  - package-ecosystem: docker-compose
+    directory: /
+    schedule:
+      interval: daily
+    cooldown:
+      default-days: 7
+    groups:
+      docker-compose:
+        patterns:
+          - '*'
+  - package-ecosystem: uv
+    directories:
+      - /
+    schedule:
+      interval: daily
+    cooldown:
+      default-days: 7
+    groups:
+      uv:
+        patterns:
+          - '*'
+  # - package-ecosystem: pre-commit
+  #   directory: /
+  #   schedule:
+  #     interval: daily
+  #   cooldown:
+  #     default-days: 7
+  #   groups:
+  #     pre-commit:
+  #       patterns:
+  #         - '*'
