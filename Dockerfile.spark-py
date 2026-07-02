@@ -1,0 +1,5 @@
+FROM apache/spark:4.0.3
+
+USER root
+
+ENV SPARK_NO_DAEMONIZE=true

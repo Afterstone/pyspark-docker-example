@@ -1,16 +1,19 @@
-FROM apache/spark-py:v3.4.0
+FROM eclipse-temurin:17-jre-jammy
 
-ENV UV_COMPILE_BYTECODE=1
-ENV PYTHONUNBUFFERED=1
-ENV PYTHONPATH=/app/src:/opt/spark/python:/opt/spark/python/lib/py4j-0.10.9.7-src.zip
+ENV JAVA_HOME=/opt/java/openjdk
+ENV PATH="${JAVA_HOME}/bin:${PATH}"
 
-USER root
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+COPY --from=ghcr.io/astral-sh/uv:0.11.26 /uv /uvx /bin/
 
 WORKDIR /app
-COPY pyproject.toml uv.lock README.md .
-COPY src/ ./src/
 
-RUN uv sync --frozen
+ENV UV_COMPILE_BYTECODE=1 \
+    UV_LINK_MODE=copy \
+    UV_PYTHON=3.10
 
-CMD ["uv", "run", "python", "-m"]
+COPY pyproject.toml uv.lock README.md /app/
+RUN uv sync --no-install-project --no-dev
+
+COPY src /app/src
+RUN uv sync --no-dev
+
