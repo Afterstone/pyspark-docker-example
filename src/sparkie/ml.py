@@ -6,6 +6,8 @@ from pyspark.ml.feature import VectorAssembler
 from pyspark.ml.regression import LinearRegression
 from pyspark.sql import SparkSession
 
+from . import config
+
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -13,7 +15,7 @@ logger = logging.getLogger(__name__)
 def main():
     spark = (
         SparkSession.builder.appName("toy-linear-regression")
-        .master("spark://spark-master:7077")
+        .master(config.SPARK_MASTER_URL)
         .getOrCreate()
     )
 

@@ -26,3 +26,5 @@ services:
       - spark-master
     profiles:
       - spark-job-sparkie
+    environment:
+      - SPARK_MASTER_URL=spark://spark-master:7077

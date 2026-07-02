@@ -2,4 +2,10 @@ FROM apache/spark:4.0.3
 
 USER root
 
+RUN useradd -m -s /bin/bash sparkuser \
+    && mkdir -p /opt/spark/work /opt/spark/logs \
+    && chown -R sparkuser:sparkuser /opt/spark/work /opt/spark/logs
+
+USER sparkuser
+
 ENV SPARK_NO_DAEMONIZE=true
