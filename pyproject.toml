@@ -7,9 +7,9 @@ authors = []
 requires-python = ">=3.10,<3.11"
 dependencies = [
     "numpy>=2.0",
-    "pyspark>=4.0",
+    "pyspark>=4.2.0",
     "python-dotenv>=1.0",
-    "setuptools>=80.0",
+    "setuptools>=83.0.0",
 ]
 
 [tool.uv]
@@ -20,10 +20,10 @@ constraint-dependencies = []
 sparkie = "sparkie:main"
 
 [build-system]
-requires = ["uv_build>=0.10.4,<0.15.0"]
+requires = ["uv_build>=0.11.28,<0.15.0"]
 build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
-    "ruff>=0.15.19",
+    "ruff>=0.15.21",
 ]
