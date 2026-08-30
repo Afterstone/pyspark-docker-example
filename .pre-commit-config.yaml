@@ -22,13 +22,13 @@ repos:
   #   hooks:
   #     - id: hadolint-docker
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: 745be0411e3c150e246d527e531e5a221b8c3462  # frozen: v0.15.19
+    rev: aab412d509121cb5f7533134b7e67f9fab59c682  # frozen: v0.16.4
     hooks:
       - id: ruff-format
       - id: ruff-check
         args: [--fix]
   - repo: https://github.com/zizmorcore/zizmor-pre-commit
-    rev: e3eebf65325ccc992422292cb7a4baee967cf815  # frozen: v1.26.1
+    rev: 451b56af716f9f0d0c2b816503a3fd0cf8b036fa  # frozen: v1.29.0
     hooks:
       - id: zizmor
         args: [--config, ./.config/zizmor.yml]
